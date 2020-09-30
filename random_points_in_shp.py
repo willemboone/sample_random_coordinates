@@ -32,8 +32,7 @@ class RandomPoints(object):
         """
         counter = 0
         while counter < count:
-            lat = np.random.uniform(-90, 90)
-            lon = np.random.uniform(-180, 180)
+	    lat, lon = random_lat_lon()
             p = Point(lon, lat)
             if self.aoi_geom.contains(p):
                 print("point added {}".format(counter + 1))
